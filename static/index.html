@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video İndirme Servisi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hoşgeldiniz Ekranı -->
+    <div class="welcome-screen">
+        <div class="typing-text"></div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div class="main-content" style="display: none;">
+        <!-- Üst Banner -->
+        <div class="hero">
+            <div class="bubbles"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Video İndirme Servisi</h1>
+                    <p class="hero-subtitle">YouTube, TikTok, Twitter ve Instagram videolarını kolayca indirin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- İndirme Bölümü -->
+        <div class="container">
+            <div class="download-card">
+                <div class="input-group">
+                    <input type="text" class="url-input" placeholder="Video linkini yapıştırın...">
+                    <button class="paste-btn">
+                        <i class="far fa-clipboard"></i>
+                        Yapıştır
+                    </button>
+                </div>
+
+                <div class="platform-indicator">
+                    <i class="fab fa-youtube platform-icon youtube"></i>
+                    <i class="fab fa-tiktok platform-icon tiktok"></i>
+                    <i class="fab fa-instagram platform-icon instagram"></i>
+                    <svg class="platform-icon twitter" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </div>
+
+                <div class="format-buttons">
+                    <button class="format-btn" onclick="downloadVideo('mp4')">
+                        <i class="fas fa-video"></i>
+                        MP4 olarak indir
+                    </button>
+                    <button class="format-btn" onclick="downloadVideo('mp3')">
+                        <i class="fas fa-music"></i>
+                        MP3 olarak indir
+                    </button>
+                </div>
+            </div>
+
+            <!-- Özellikler -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Hızlı İndirme</h3>
+                    <p>Yüksek hızlı sunucularımızla anında indirme</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Güvenli</h3>
+                    <p>0 güvenli ve reklamsız indirme</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Sınırsız</h3>
+                    <p>Limitsiz indirme hakkı</p>
+                </div>
+            </div>
+
+            <!-- Video Önizleme -->
+            <div id="videoPreview" class="video-preview"></div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Video indiriliyor...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
